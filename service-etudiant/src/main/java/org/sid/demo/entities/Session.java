@@ -14,7 +14,7 @@ import java.util.Set;
 public class Session {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String annee_scolaire;
+    private String anneeScolaire;
 
     @OneToMany(mappedBy = "sessionEtudiant")
     private Set<Etudiant> etudiants;

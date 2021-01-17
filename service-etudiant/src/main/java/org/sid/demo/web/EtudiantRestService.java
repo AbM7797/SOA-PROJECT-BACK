@@ -1,8 +1,11 @@
 package org.sid.demo.web;
 
+import org.sid.demo.dao.EtudiantRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.HashMap;
@@ -11,7 +14,7 @@ import java.util.Map;
 @RefreshScope
 @RestController
 public class EtudiantRestService {
-    @Value("${xParam}")
+   /* @Value("${xParam}")
     private int xParam;
     @Value("${yParam}")
     private int yParam;
@@ -25,6 +28,7 @@ public class EtudiantRestService {
         params.put("me",me);
         params.put("threadName",Thread.currentThread().getName());
         return params;
-    }
+    }*/
+
 
 }

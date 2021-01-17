@@ -1,23 +1,20 @@
-package org.sid.demo.entities;
+package com.example.serviceenseignant.entities;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.Set;
 
 @Entity
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Data
-public class Class {
+public class EnseignantIdClass {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nom_class;
-    @OneToMany(mappedBy = "classEtudiant")
-    private Set<Etudiant> etudiants;
+
     @ManyToOne
-    private Section sectionClass;
+    private Enseignant refClass;
 }

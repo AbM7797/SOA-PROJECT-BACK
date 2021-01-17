@@ -4,10 +4,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
+import java.util.Set;
 
 @Entity
 @AllArgsConstructor
@@ -19,7 +18,10 @@ public class Enseignant {
     private String nom;
     private String prenom;
     private String adresse;
-    private Long tel;
-    private Long id_Class;
-    private Long id_Matiere;
+    private Number telephone;
+
+    @OneToMany(mappedBy = "refClass",cascade = CascadeType.ALL)
+    private List<EnseignantIdClass> enseignantIdClasses;
+
+    private Long idMatiere;
 }

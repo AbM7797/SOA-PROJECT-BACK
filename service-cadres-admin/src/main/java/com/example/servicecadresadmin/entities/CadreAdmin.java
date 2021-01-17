@@ -19,5 +19,5 @@ public class CadreAdmin {
     private String nom;
     private String prenom;
     private String adresse;
-    private Long tel;
+    private Number telephone;
 }

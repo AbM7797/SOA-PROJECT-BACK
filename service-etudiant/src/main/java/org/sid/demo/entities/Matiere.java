@@ -1,11 +1,14 @@
 package org.sid.demo.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import org.springframework.data.rest.core.annotation.RestResource;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -23,5 +26,5 @@ public class Matiere {
     private Set<Absence> absences;
 
     @ManyToMany(mappedBy = "matiereSection")
-    private Set<Section> sections;
+    private List<Section> sections;
 }
